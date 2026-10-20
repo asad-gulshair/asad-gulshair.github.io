@@ -35,14 +35,16 @@ if (!REDUCED && FINE) {
   document.addEventListener('pointerleave', () => spot.classList.remove('on'));
 
   // ---- 3D tilt + glare (delegated, so cards rendered later work too) ----
-  const TILT = '.card, .panel, .ccard, .featured .matte, .conn > div, .lead-card, .deliver, .rs-win, .pub, .caps > div';
+  const TILT = '.card, .panel, .ccard, .featured .matte, .conn > div, .lead-card, .deliver, .rs-win, .pub, .caps > div, .svc-card, .prod-card, .sc-pills > li, .proc-line > li, .cta-next > li';
   let cur = null, praf = 0, px = 0, py = 0;
-  const reset = (el) => { el.classList.remove('hot'); el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); };
+  const reset = (el) => { el.classList.remove('hot'); el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); el.style.setProperty('--nx', '0'); el.style.setProperty('--ny', '0'); };
   const apply = () => {
     praf = 0; if (!cur) return; const r = cur.getBoundingClientRect(); if (!r.width) return;
     const nx = (px - r.left) / r.width, ny = (py - r.top) / r.height; const max = Math.min(7, Math.max(2.5, 2400 / Math.max(r.width, 300)));
     cur.style.setProperty('--ry', ((nx - .5) * 2 * max).toFixed(2) + 'deg'); cur.style.setProperty('--rx', ((.5 - ny) * 2 * max).toFixed(2) + 'deg');
     cur.style.setProperty('--gx', (nx * 100).toFixed(1) + '%'); cur.style.setProperty('--gy', (ny * 100).toFixed(1) + '%');
+    // unitless pointer offset (-.5..5) so inner layers can drift for a parallax depth effect
+    cur.style.setProperty('--nx', (nx - .5).toFixed(3)); cur.style.setProperty('--ny', (ny - .5).toFixed(3));
   };
   document.addEventListener('pointermove', (e) => {
     if (e.pointerType !== 'mouse') return;

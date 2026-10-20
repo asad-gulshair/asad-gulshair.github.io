@@ -66,6 +66,17 @@ wireOpeners(document);
 initShowcase();
 initScoring();
 if (!CAPTURE) (window.requestIdleCallback || ((f) => setTimeout(f, 200)))(() => initGuide(), { timeout: 1500 });
+// 3D agent network beside the Services heading (desktop; loads only when the section comes near)
+{
+  const svc = $('#services .wrap');
+  if (svc && !CAPTURE && !REDUCED && matchMedia('(min-width: 1001px)').matches) {
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return; io.disconnect();
+      import('./agentnet.js').then(({ createAgentNet }) => createAgentNet(svc, $$('.svc-card', svc))).catch((err) => console.warn('agentnet', err));
+    }, { rootMargin: '600px 0px' });
+    io.observe(svc);
+  }
+}
 Promise.all([loadProjects(), site]).then(([, d]) => {
   render();
   addEventListener('popstate', routeFromHash); addEventListener('hashchange', routeFromHash);

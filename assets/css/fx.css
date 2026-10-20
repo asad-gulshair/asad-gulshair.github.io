@@ -478,3 +478,63 @@ html:not(.no-intro) .hero-copy>*{animation-delay:calc(var(--d,0s) + 1.05s)}
 /* Scout's seat on laptop widths: smaller, tucked into the corner */
 @media (max-width:1419px){.buddy-on .guide-dock{width:78px;height:82px;left:8px;bottom:10px}.buddy-on .guide-panel{bottom:104px}}
 .guide-ask{white-space:nowrap}
+
+/* ---------- 3D layer v3: agent network, depth parallax, glowing glass edges, 3D entrances ---------- */
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+/* agent network scene beside the Services heading (desktop) */
+#services .wrap{position:relative}
+#services .sec-head,#services .svc-grid{position:relative;z-index:1}
+.agentnet{position:absolute;top:-96px;right:-12px;width:min(42%,580px);height:400px;z-index:0;pointer-events:none;opacity:0;transition:opacity 1.6s var(--ease);-webkit-mask-image:radial-gradient(closest-side,#000 70%,transparent);mask-image:radial-gradient(closest-side,#000 70%,transparent)}
+.agentnet.on{opacity:1}
+@media (max-width:1000px){.agentnet{display:none}}
+
+/* depth: inner layers drift with the pointer while the card tilts */
+.svc-card>.glare{position:absolute}
+.svc-card.tilt:hover,.prod-card.tilt:hover{transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
+.svc-card .svc-ic,.svc-card h3,.prod-card h3,.prod-card .meta{transition:translate .5s var(--ease),box-shadow .35s,border-color .35s}
+.svc-card.tilt.hot .svc-ic{translate:calc(var(--nx,0) * 16px) calc(var(--ny,0) * 16px);border-color:color-mix(in srgb,var(--c) 55%,var(--border-strong));box-shadow:0 12px 26px -10px color-mix(in srgb,var(--c) 70%,transparent)}
+.svc-card.tilt.hot h3,.prod-card.tilt.hot h3{translate:calc(var(--nx,0) * 7px) calc(var(--ny,0) * 7px)}
+.prod-card.tilt.hot .meta{translate:calc(var(--nx,0) * 10px) calc(var(--ny,0) * 10px)}
+.svc-card.tilt.hot,.prod-card.tilt.hot{transition:transform .09s linear,border-color .35s,box-shadow .35s}
+
+/* glowing glass edge that runs around a card on hover/focus */
+.svc-card::after,.prod-card::after,.sc-demo::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;z-index:2;opacity:0;transition:opacity .45s var(--ease);
+  background:conic-gradient(from var(--ang),transparent 0 55%,color-mix(in srgb,var(--c,var(--accent)) 90%,#fff) 72%,transparent 88%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.svc-card:hover::after,.prod-card:hover::after,.svc-card:focus-within::after,.prod-card:focus-within::after{opacity:1;animation:edgespin 3.4s linear infinite}
+.sc-demo{--c:var(--c-recruitment)}
+.sc-demo::after{opacity:.55;animation:edgespin 9s linear infinite}
+@keyframes edgespin{to{--ang:360deg}}
+
+/* 3D entrances: cards swing up out of the page instead of only fading in */
+.js-motion .svc-grid,.js-motion .prod-grid{perspective:1200px}
+.js-motion .svc-grid.reveal,.js-motion .prod-grid.reveal{opacity:1;transform:none}
+.js-motion .svc-grid>li,.js-motion .prod-grid>li{opacity:0;rotate:x 24deg;translate:0 46px;transform-origin:50% 100%;
+  transition:opacity .8s var(--ease) var(--d,0ms),rotate 1.05s var(--ease) var(--d,0ms),translate 1.05s var(--ease) var(--d,0ms),transform .35s var(--ease),border-color .35s,box-shadow .35s}
+.js-motion .svc-grid>li.tilt.hot,.js-motion .prod-grid>li.tilt.hot{transition:opacity .8s var(--ease) var(--d,0ms),rotate 1.05s var(--ease) var(--d,0ms),translate 1.05s var(--ease) var(--d,0ms),transform .09s linear,border-color .35s,box-shadow .35s}
+.js-motion .svc-grid.in>li,.js-motion .prod-grid.in>li{opacity:1;rotate:x 0deg;translate:0 0}
+.js-motion :is(.svc-grid,.prod-grid)>li:nth-child(2){--d:90ms}.js-motion :is(.svc-grid,.prod-grid)>li:nth-child(3){--d:180ms}
+.js-motion :is(.svc-grid,.prod-grid)>li:nth-child(4){--d:150ms}.js-motion :is(.svc-grid,.prod-grid)>li:nth-child(5){--d:240ms}.js-motion :is(.svc-grid,.prod-grid)>li:nth-child(6){--d:330ms}
+/* project cards tip forward as they rise */
+.js-motion .grid3,.js-motion .ind-cards{perspective:1400px}
+.js-motion .card.mv{rotate:x 14deg;transform-origin:50% 100%;transition:opacity .8s var(--ease) var(--d,0ms),translate .9s var(--ease) var(--d,0ms),scale .9s var(--ease) var(--d,0ms),rotate 1s var(--ease) var(--d,0ms),border-color .16s,transform .16s}
+.js-motion .card.mv.in{rotate:x 0deg}
+
+/* process line: steps flip in like panels, then a data packet keeps travelling the pipeline */
+.js-motion .proc-line{perspective:900px}
+.js-motion .proc-line>li{opacity:0;rotate:y -70deg;transform-origin:0 50%;transition:opacity .7s var(--ease) var(--d,0ms),rotate .95s var(--ease) var(--d,0ms),transform .55s var(--ease)}
+.js-motion .proc-line.in>li{opacity:1;rotate:y 0deg}
+.js-motion .proc-line>li:nth-child(1){--d:250ms}.js-motion .proc-line>li:nth-child(2){--d:420ms}.js-motion .proc-line>li:nth-child(3){--d:590ms}.js-motion .proc-line>li:nth-child(4){--d:760ms}.js-motion .proc-line>li:nth-child(5){--d:930ms}
+.proc-line::after{content:"";position:absolute;top:19px;left:24px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px var(--cyan),0 0 32px 10px rgba(232,116,59,.45);opacity:0;pointer-events:none;z-index:1}
+.proc-line.in::after{animation:packet 4.8s var(--ease) 1.8s infinite}
+.proc-line li{z-index:2}
+@keyframes packet{0%{left:24px;opacity:0}8%,90%{opacity:1}100%{left:calc(100% - 34px);opacity:0}}
+@keyframes packetv{0%{top:24px;opacity:0}8%,90%{opacity:1}100%{top:calc(100% - 34px);opacity:0}}
+@media (max-width:900px){.proc-line::after{left:19px;top:24px}.proc-line.in::after{animation-name:packetv}}
+
+@media (prefers-reduced-motion:reduce){.agentnet{display:none}.svc-card::after,.prod-card::after,.sc-demo::after{animation:none}.proc-line::after{display:none}}
+/* hero: the flat grid becomes a 3D floor receding toward the horizon, slowly flowing toward the viewer */
+.hero::before{inset:auto -40% -2% -40%;height:46%;background-image:linear-gradient(rgba(232,116,59,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(155,140,255,.10) 1px,transparent 1px);background-size:72px 72px;
+  transform:perspective(420px) rotateX(66deg);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.55) 45%,transparent 92%);mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.55) 45%,transparent 92%);animation:floorflow 5s linear infinite}
+@keyframes floorflow{to{background-position:0 72px}}
+@media (prefers-reduced-motion:reduce){.hero::before{animation:none}}

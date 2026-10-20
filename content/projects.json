@@ -385,6 +385,51 @@
       }
     },
     {
+      "slug": "voice-emotion-detection",
+      "title": "Voice emotion detection",
+      "category": "agents",
+      "subcategory": "",
+      "featured": false,
+      "status": "RESEARCH",
+      "year": "2025",
+      "role": "Model and demo app",
+      "summary": "Listens to a short voice clip and tells you the speaker's emotion: happy, sad, angry, fear, disgust or neutral.",
+      "problem": "Call centres and voice assistants hear thousands of conversations, but nobody can listen to all of them to catch an angry or upset caller in time.",
+      "approach": [
+        "Speech turned into MFCC audio features and standardised",
+        "A deep learning model classifies six emotions from those features",
+        "Checked with a confusion matrix, plus a small app to test your own clips"
+      ],
+      "result": "Working model and demo app. Code and notebook are in the repository.",
+      "stack": [
+        "Python",
+        "Deep learning",
+        "MFCC",
+        "Audio processing"
+      ],
+      "links": [
+        {
+          "type": "code",
+          "label": "View code ↗",
+          "url": "https://github.com/asad-gulshair/Voice-Emotion-Detection"
+        }
+      ],
+      "media": {
+        "type": "illustration",
+        "src": "",
+        "poster": "",
+        "illustration": "voice",
+        "caption": "Voice clip to MFCC features to emotion scores. (Illustration)",
+        "portrait": false
+      },
+      "youtube": "",
+      "youtubePortrait": false,
+      "extra": {
+        "src": "",
+        "caption": ""
+      }
+    },
+    {
       "slug": "subtitle-saas",
       "title": "Subtitle and transcription SaaS",
       "category": "agents",
