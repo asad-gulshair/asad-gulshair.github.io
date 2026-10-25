@@ -75,6 +75,46 @@
       }
     },
     {
+      "slug": "ai-safety-camera",
+      "title": "AI safety camera: PPE and restricted zones",
+      "category": "industrial",
+      "subcategory": "detection",
+      "featured": false,
+      "status": "DEMO",
+      "year": "2026",
+      "role": "Detection, PPE model, zone logic and entry log",
+      "summary": "Checks every worker on camera for a hard hat and vest, logs each entry into a restricted zone, and raises an alarm the moment gear is missing.",
+      "problem": "Safety officers cannot watch every camera all day. A worker without a hard hat or vest can walk into a risky area, and nobody knows until an incident or an audit.",
+      "approach": [
+        "Detects and tracks every worker, each with their own ID",
+        "A YOLOv8 model checks each person for a hard hat and a high-visibility vest",
+        "A virtual line marks the restricted zone: gear on means the entry is logged, gear missing means an instant alarm",
+        "Every entry is saved with a timestamp, so the safety team has a record for audits"
+      ],
+      "result": "Demo on real warehouse footage (Intel IoT sample videos, CC BY 4.0) with a YOLOv8 model trained on the Roboflow Construction Site Safety dataset. Built to run on standard CCTV, and the zones and gear rules can be set for each site.",
+      "stack": [
+        "YOLOv8",
+        "Object tracking",
+        "OpenCV",
+        "Python"
+      ],
+      "links": [],
+      "media": {
+        "type": "video",
+        "src": "assets/media/safety-camera.mp4",
+        "poster": "assets/media/safety-camera.webp",
+        "illustration": "",
+        "caption": "Demo: worker detection, PPE check, a virtual restricted line and the entry log. No audio. Footage: Intel IoT sample videos (CC BY 4.0).",
+        "portrait": true
+      },
+      "youtube": "",
+      "youtubePortrait": false,
+      "extra": {
+        "src": "",
+        "caption": ""
+      }
+    },
+    {
       "slug": "parcel-counting",
       "title": "Parcel counting on a conveyor",
       "category": "industrial",
