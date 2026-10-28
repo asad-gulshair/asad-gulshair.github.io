@@ -11,7 +11,7 @@ MAIL_PROJECT = f"mailto:{EMAIL}?subject={quote('Project enquiry')}"
 MAIL_MEET = f"mailto:{EMAIL}?subject={quote('Meeting request - project discussion')}&body={quote('Hi Asad,\n\nI would like to book a Google Meet call about a project.\n\nPreferred times (2-3 options, with your timezone):\n1. \n2. \n3. \n\nShort project summary:\n\n')}"
 IRIS = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#EDEBE6" stroke-width="1.5"/><g stroke="#A3A7AB" stroke-width="1.3" stroke-linecap="round">' + ''.join(f'<path d="M12 12 L12 2.2" transform="rotate({a} 12 12) translate(3.2 0)"/>' for a in range(0, 360, 60)) + '</g><circle cx="12" cy="12" r="2.6" fill="#E8743B"/></svg>'
 PAGES = {
- 'index.html': ('Asad Gulshair, AI Engineer · Computer Vision & AI Agents', 'Custom AI systems, subscription AI agents and SaaS tools: computer vision inspection for factories, CV screening for HR and automation for operations teams.', None),
+ 'index.html': ('Asad Gulshair, AI Engineer · Computer Vision & AI Agents', 'Custom AI systems built around your process: computer vision inspection for factories, CV screening for HR, and AI agents and automation for operations teams.', None),
  'projects.html': ('Work · Asad Gulshair, AI Engineer', 'Case studies in industrial computer vision, recruitment automation, AI agents, SaaS tools and agriculture, with honest status labels and real model output.', 'projects'),
  'about.html': ('About · Asad Gulshair, AI Engineer', 'About Asad Gulshair: AI engineer, capabilities, experience, education and IEEE publication.', 'about'),
  'contact.html': ('Contact · Asad Gulshair, AI Engineer', 'Start a project or book a meeting with Asad Gulshair. Email, LinkedIn and GitHub.', 'contact'),
@@ -101,16 +101,16 @@ RECRUITER = (ROOT / 'tools' / 'recruiter_section.html').read_text(encoding='utf-
 STACK = ['Python', 'PyTorch', 'TensorFlow', 'YOLOv8', 'OpenCV', 'FastAPI', 'LangChain', 'LangGraph', 'n8n', 'Whisper', 'Docker']
 SERVICES = [
  (ICON(f'<rect x="4" y="9" width="19" height="15" rx="2"/><circle cx="13.5" cy="16.5" r="4"/><path d="M21 4h7v7M28 4l-9 9" {AC}/>'), 'Computer vision and quality inspection', 'Defect detection, counting and measurement on standard cameras, built for your parts and line.', 'projects.html#industrial', 'Inspection work', '#E8743B'),
- (ICON(f'<circle cx="7" cy="16" r="3"/><circle cx="25" cy="8" r="3"/><circle cx="25" cy="24" r="3"/><path d="M10 16h6M16 16l6-7M16 16l6 7" {AC}/>'), 'AI agents on subscription', 'An agent set up for your workflow that runs every day, monitored and improved monthly.', 'contact.html?topic=AI%20agent%20for%20my%20business#start', 'Get an agent', '#9B8CFF'),
- (ICON(f'<rect x="4" y="6" width="24" height="18" rx="2"/><path d="M4 11h24M9 16h8M9 20h5"/><circle cx="23" cy="19" r="3" {AC}/>'), 'SaaS products', 'Ready-to-use AI tools your team can sign in to, such as invoice to Excel.', '#products', 'See products', '#8EA2E8'),
+ (ICON(f'<circle cx="7" cy="16" r="3"/><circle cx="25" cy="8" r="3"/><circle cx="25" cy="24" r="3"/><path d="M10 16h6M16 16l6-7M16 16l6 7" {AC}/>'), 'AI agents for your workflow', 'An agent built around your process that runs the routine work every day: leads, reports, documents or follow-ups.', 'contact.html?topic=AI%20agent%20for%20my%20business#start', 'Get an agent', '#9B8CFF'),
+ (ICON(f'<rect x="4" y="6" width="24" height="18" rx="2"/><path d="M4 11h24M9 16h8M9 20h5"/><circle cx="23" cy="19" r="3" {AC}/>'), 'Ready-to-use tools', 'AI tools that already work today, such as invoice to Excel.', '#products', 'See products', '#8EA2E8'),
  (ICON(f'<rect x="6" y="4" width="15" height="20" rx="2"/><path d="M10 10h7M10 14h7M10 18h4"/><path d="M19 20l3 3 6-7" {AC}/>'), 'Document processing and extraction', 'Invoices, CVs and reports turned into clean, structured data.', 'projects.html#recruitment', 'Document work', '#D2B06A'),
  (ICON(f'<path d="M5 8h14M5 13h10M5 18h12"/><circle cx="23" cy="20" r="5" {AC}/><path d="M26.5 23.5L29 26" {AC}/>'), 'LLM apps and RAG', 'Assistants that answer from your own documents and show the source.', 'projects.html#agents', 'LLM work', '#47D7E6'),
  (ICON(f'<path d="M16 4l11 5.5v13L16 28 5 22.5v-13z"/><path d="M5 9.5L16 15l11-5.5M16 15v13" {AC}/>'), 'Custom build and deployment', 'From a prototype on your data to an API, app or dashboard your team runs.', 'contact.html#start', 'Start a project', '#8DB86A'),
 ]
 PRODUCTS = [
- ('SaaS · Live', 'Invoice to Excel', 'Upload invoices, get one clean Excel sheet. No more retyping by hand.', [('Open the app ↗', 'https://invoice-to-excel-tool.streamlit.app/', True), ('Ask about a team plan', 'contact.html?topic=Document%20processing#start', False)], '#8EA2E8'),
+ ('Web app · Live', 'Invoice to Excel', 'Upload invoices, get one clean Excel sheet. No more retyping by hand.', [('Open the app ↗', 'https://invoice-to-excel-tool.streamlit.app/', True), ('Get it customised', 'contact.html?topic=Document%20processing#start', False)], '#8EA2E8'),
  ('SaaS · Built for a media team', 'Subtitles and translation', 'Multilingual subtitles, transcription and translation in one tool, used in production.', [('Get one for your team', 'contact.html?topic=Document%20processing#start', False), ('Case study →', 'projects.html#/work/subtitle-saas', False)], '#47D7E6'),
- ('Subscription', 'Your own AI agent', 'Leads, reports, documents or follow-ups: an agent built around your workflow, running and maintained every month.', [('Tell me your workflow', 'contact.html?topic=AI%20agent%20for%20my%20business#start', False)], '#9B8CFF'),
+ ('Custom build', 'Your own AI agent', 'Leads, reports, documents or follow-ups: an agent built around your workflow, with support after launch.', [('Tell me your workflow', 'contact.html?topic=AI%20agent%20for%20my%20business#start', False)], '#9B8CFF'),
 ]
 PROCESS = [
  ('Discover', 'Your problem, your data and what success looks like.'),
@@ -121,7 +121,7 @@ PROCESS = [
 ]
 def page_index():
     PRODUCTS_HTML = f'''<section id="products" class="prod" aria-labelledby="prod-h"><div class="wrap">
-  <div class="sec-head reveal"><p class="meta">Products</p><h2 id="prod-h">Ready-to-use tools and AI agents on subscription.</h2><p class="lead">No project needed. Start with a tool that works today, or an agent set up for your workflow.</p></div>
+  <div class="sec-head reveal"><p class="meta">Products</p><h2 id="prod-h">Tools that work today, and agents built for you.</h2><p class="lead">Try a tool that already works, or tell me the workflow you want an agent to run.</p></div>
   <ul class="prod-grid reveal">{''.join(f'<li class="prod-card" style="--c:{c}"><span class="meta">{tag}</span><h3>{t}</h3><p>{d}</p><div class="prod-acts">' + ''.join(f'<a class="{"btn btn-primary sm" if i == 0 else "tlink"}" href="{h}"' + (' target="_blank" rel="noopener"' if ext else '') + f' data-cta="product">{l}</a>' for i, (l, h, ext) in enumerate(acts)) + '</div></li>' for tag, t, d, acts, c in PRODUCTS)}</ul>
 </div></section>
 '''
@@ -154,7 +154,7 @@ def page_index():
   <p style="margin-top:32px"><a class="btn" href="projects.html">See all projects →</a></p>
 </div></section>
 {RECRUITER}<section id="services" class="svc" aria-labelledby="svc-h"><div class="wrap">
-  <div class="sec-head reveal"><p class="meta">Services</p><h2 id="svc-h">What I can do for you.</h2><p class="lead">Different businesses need different things: a custom system, an agent on subscription, or a tool that is ready today.</p></div>
+  <div class="sec-head reveal"><p class="meta">Services</p><h2 id="svc-h">What I can do for you.</h2><p class="lead">Different businesses need different things: a custom system, an AI agent for a daily workflow, or a tool that is ready today.</p></div>
   <ul class="svc-grid reveal">{''.join(f'<li class="svc-card" style="--c:{c}"><span class="svc-ic" aria-hidden="true">{ic}</span><h3>{t}</h3><p>{d}</p><a class="svc-go" href="{h}">{l} →</a></li>' for ic, t, d, h, l, c in SERVICES)}</ul>
 </div></section>
 {PRODUCTS_HTML}<section id="how" class="proc" aria-labelledby="how-h"><div class="wrap">

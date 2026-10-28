@@ -10,7 +10,7 @@ import { initGuide } from './guide.js';
 const OUT = {
   industrial: ['Catches defects the eye misses', 'Counts and measures parts automatically', 'Same pass or fail standard on every part'],
   recruitment: ['Screening and shortlisting, scored on evidence', 'Candidates compared, interviews scheduled', 'Onboarding managed in the same system'],
-  agents: ['AI agents that run your routine work on subscription', 'Ready-to-use SaaS tools, such as invoice to Excel', 'About 40% less manual translation work, in production'],
+  agents: ['AI agents that run your routine work every day', 'Ready-to-use tools, such as invoice to Excel', 'About 40% less manual translation work, in production'],
   agriculture: ['Grades ripeness and flags disease early', 'Counts and monitors from ordinary camera footage', 'Peer-reviewed in IEEE Access, 2025'],
 };
 // ---- ad / post links: ?for=factory|warehouse|hr|agents|saas lands each audience on its own headline and industry ----
@@ -18,8 +18,8 @@ const FOR = {
   factory: { cat: 'industrial', topic: 'Computer vision inspection and detection', h: 'Catch every defect on your line with AI inspection.', s: 'Custom computer vision for cracks, weld defects, coating and dimension checks on standard cameras, built around your parts and your line.', hello: 'Inspection on your line? Let me show you.' },
   warehouse: { cat: 'industrial', first: 'parcel-counting', topic: 'Computer vision inspection and detection', h: 'Count every parcel automatically, live.', s: 'Camera-based counting for conveyors and docks: a live rate per hour, empty-belt alerts and a log your team can trust.', hello: 'Counting parcels? Here’s how it works.' },
   hr: { cat: 'recruitment', topic: 'Recruitment and HR automation', h: 'Screen every CV in minutes. A person still decides.', s: 'AI scores each CV against the role with the reasons shown, then tracks interviews through to hire.', hello: 'Hiring? Let me show you the CV scoring.' },
-  agents: { cat: 'agents', topic: 'AI agent for my business', h: 'An AI agent that does the routine work, every day.', s: 'Agents built around your workflow (leads, reports, documents, follow-ups), running on subscription and maintained every month.', hello: 'Want an agent for your workflow?' },
-  saas: { cat: 'agents', topic: 'Document processing', h: 'AI tools your team can use today.', s: 'Ready-to-use SaaS such as invoice to Excel, plus custom tools built around your workflow.', hello: 'Looking for a ready-made tool?' },
+  agents: { cat: 'agents', topic: 'AI agent for my business', h: 'An AI agent that does the routine work, every day.', s: 'Agents built around your workflow (leads, reports, documents, follow-ups), built and set up for your team.', hello: 'Want an agent for your workflow?' },
+  saas: { cat: 'agents', topic: 'Document processing', h: 'AI tools your team can use today.', s: 'Ready-to-use tools such as invoice to Excel, plus custom tools built around your workflow.', hello: 'Looking for a ready-made tool?' },
 };
 const ALIAS = { manufacturing: 'factory', inspection: 'factory', logistics: 'warehouse', recruitment: 'hr', automation: 'agents', agent: 'agents', tools: 'saas' };
 const AD = (() => { try { const k = (new URLSearchParams(location.search).get('for') || '').toLowerCase(); return FOR[ALIAS[k] || k] || null; } catch (_) { return null; } })();
