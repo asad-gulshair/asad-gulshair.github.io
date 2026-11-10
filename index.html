@@ -16,10 +16,10 @@
 <link rel="preload" href="assets/fonts/geist-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css"><link rel="stylesheet" href="assets/css/fx.css">
 <link rel="preload" href="content/site.json" as="fetch" crossorigin><link rel="preload" href="content/projects.json" as="fetch" crossorigin><link rel="modulepreload" href="assets/js/home.js">
+<script data-goatcounter="https://asadgulshair.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Asad Gulshair", "jobTitle": "AI Engineer", "url": "https://asad-gulshair.github.io/", "email": "mailto:asadgulshair6767@gmail.com", "sameAs": ["https://github.com/asad-gulshair", "https://www.linkedin.com/in/asad-gulshair"]}</script>
 <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
 <script>try{if(sessionStorage.getItem('intro')||/[?&]capture/.test(location.search))document.documentElement.classList.add('no-intro');else sessionStorage.setItem('intro','1')}catch(e){document.documentElement.classList.add('no-intro')}</script>
-<script data-goatcounter="https://asadgulshair.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="intro" aria-hidden="true"><div class="intro-in"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#EDEBE6" stroke-width="1.2"/><circle cx="12" cy="12" r="2.6" fill="#E8743B"/></svg><span>Asad Gulshair</span><i></i></div></div>
@@ -36,27 +36,35 @@
 <section class="hero" aria-labelledby="hero-h"><div class="wrap">
   <div class="hero-copy">
     <p class="meta" data-site="hero.eyebrow">Asad Gulshair · AI Engineer</p>
-    <h1 id="hero-h" data-site="hero.headline">AI that takes the repetitive work off your team.</h1>
-    <p class="lead" data-site="hero.subline">From computer vision on the factory floor to workflow automation across HR and operations, I build AI systems around your process and your data. Tell me the problem and I'll design the solution.</p>
-    <div class="cta-row"><a class="btn btn-primary" href="contact.html#start" data-cta="hero">Get a free consultation</a><a class="btn" href="#work" id="cta-work">See real results</a></div>
+    <h1 id="hero-h" data-site="hero.headline">Get hours back every week.</h1>
+    <p class="lead" data-site="hero.subline">I build AI that does your team&rsquo;s repetitive work: data entry, documents, reports and follow-ups. Connected to the tools you already use, with a person in control.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="contact.html#start" data-cta="hero">Book a 20-minute call</a><a class="btn" href="#results">See what I&rsquo;ve automated</a></div>
     <a class="proof" href="#work" data-proof aria-label="Real output from my models: see the work"><span class="proof-th"><img src="assets/media/crack-detect.webp?v=2" alt="" width="64" height="40" loading="eager"><img src="assets/media/porosity-detect.webp?v=2" alt="" width="64" height="40" loading="eager"><img src="assets/media/parcel-count.webp" alt="" width="64" height="40" loading="eager"></span><span class="proof-t"><b>Real output from my models</b><span>Crack, porosity and parcel detection</span></span></a>
     <p class="meta avail" data-avail><i></i><span>Available for new projects</span></p>
     <nav class="practice" aria-label="Practice areas">
+      <a href="projects.html#agents" data-cat="agents"><span class="dot" style="background:var(--c-agents)"></span>AI Agents &amp; SaaS</a>
       <a href="projects.html#industrial" data-cat="industrial"><span class="dot" style="background:var(--c-industrial)"></span>Industrial Vision</a>
       <a href="projects.html#recruitment" data-cat="recruitment"><span class="dot" style="background:var(--c-recruitment)"></span>Recruitment Automation</a>
-      <a href="projects.html#agents" data-cat="agents"><span class="dot" style="background:var(--c-agents)"></span>AI Agents &amp; SaaS</a>
       <a href="projects.html#agriculture" data-cat="agriculture"><span class="dot" style="background:var(--c-agriculture)"></span>Agriculture</a>
     </nav>
   </div>
   <div class="hero-media" id="hero-media"><div class="hero-backdrop" aria-hidden="true"></div><img class="fallback-still" src="assets/media/hero-still.webp" alt="" width="900" height="900" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"><canvas id="aperture" aria-hidden="true"></canvas><div class="guide-home" id="guide-home"></div></div>
-</div><a class="scroll-cue" href="#work" aria-label="Scroll to my work"><i></i><span>Scroll</span></a></section>
+</div><a class="scroll-cue" href="#results" aria-label="Scroll to results"><i></i><span>Scroll</span></a></section>
+<section id="results" class="res" aria-labelledby="res-h"><div class="wrap">
+  <div class="sec-head reveal"><p class="meta">Results</p><h2 id="res-h">Systems I&rsquo;ve built in real businesses.</h2><p class="lead">The problem, what I built, and what changed.</p></div>
+  <ol class="res-grid reveal">
+    <li class="res-card" style="--c:var(--c-recruitment)"><span class="res-logo"><img src="assets/img/logos/qarshi.png" alt="Qarshi Industries" width="158" height="79" loading="lazy"></span><span class="meta">Recruitment &middot; In production</span><h3>Hiring that needed three people, now automated</h3><dl><dt>Problem</dt><dd>Three HR staff screened every CV and organised candidates by hand.</dd><dt>Built</dt><dd>An AI system for CV intake, scoring with reasons, shortlisting, document checks and interview scheduling.</dd><dt>Result</dt><dd>The system now does that work, and HR approves every decision.</dd></dl></li>
+    <li class="res-card" style="--c:var(--c-agents)"><span class="res-logo"><img src="assets/img/logos/drm.svg" alt="Dot Republic Media" width="87" height="33" loading="lazy"></span><span class="meta">Media &middot; In production</span><h3>Subtitles and translation in one tool</h3><dl><dt>Problem</dt><dd>Transcribing and translating videos into several languages was slow manual work.</dd><dt>Built</dt><dd>An AI platform for transcription, subtitles and translation.</dd><dt>Result</dt><dd>About 40% less manual translation work.</dd></dl></li>
+    <li class="res-card" style="--c:var(--c-industrial)"><span class="res-logo res-word">RICI Pakistan</span><span class="meta">Inspection &middot; Industrial QA</span><h3>Weld defects found and reported automatically</h3><dl><dt>Problem</dt><dd>Inspectors checked every weld and wrote detailed reports with photos.</dd><dt>Built</dt><dd>A camera system that detects weld defects and creates the report against the standard.</dd><dt>Result</dt><dd>About 40% less manual inspection time.</dd></dl></li>
+  </ol>
+  <p class="res-cta reveal"><a class="btn btn-primary" href="contact.html#start" data-cta="results">Book a 20-minute call</a><span>Tell me the task. I&rsquo;ll tell you if it can be automated.</span></p>
+</div></section>
 <section class="facts" aria-label="Track record"><div class="wrap"><ul>
   <li><b data-count="17">17</b><span>AI projects built across 4 industries</span></li>
   <li><b data-count="40" data-suffix="%">40%</b><span>less manual work, in production</span></li>
   <li><b data-count="90" data-suffix="%">90%</b><span>detection accuracy on tested models</span></li>
   <li><b>IEEE</b><span>peer-reviewed AI research</span></li>
 </ul></div></section>
-<div class="stack-strip" aria-label="Tools used in shipped or published work"><div class="wrap"><ul><li>Python</li><li>PyTorch</li><li>TensorFlow</li><li>YOLOv8</li><li>OpenCV</li><li>FastAPI</li><li>LangChain</li><li>LangGraph</li><li>n8n</li><li>Whisper</li><li>Docker</li></ul></div></div>
 <section id="work" aria-labelledby="work-h"><div class="wrap">
   <div class="sec-head reveal"><p class="meta">Selected work</p><h2 id="work-h">Pick an industry. See what I built.</h2></div>
   <div class="ind reveal" id="ind">
@@ -134,6 +142,7 @@
   <div class="sec-head reveal"><p class="meta">Products</p><h2 id="prod-h">Tools that work today, and agents built for you.</h2><p class="lead">Try a tool that already works, or tell me the workflow you want an agent to run.</p></div>
   <ul class="prod-grid reveal"><li class="prod-card" style="--c:#8EA2E8"><span class="meta">Web app · Live</span><h3>Invoice to Excel</h3><p>Upload invoices, get one clean Excel sheet. No more retyping by hand.</p><div class="prod-acts"><a class="btn btn-primary sm" href="https://invoice-to-excel-tool.streamlit.app/" target="_blank" rel="noopener" data-cta="product">Open the app ↗</a><a class="tlink" href="contact.html?topic=Document%20processing#start" data-cta="product">Get it customised</a></div></li><li class="prod-card" style="--c:#47D7E6"><span class="meta">SaaS · Built for a media team</span><h3>Subtitles and translation</h3><p>Multilingual subtitles, transcription and translation in one tool, used in production.</p><div class="prod-acts"><a class="btn btn-primary sm" href="contact.html?topic=Document%20processing#start" data-cta="product">Get one for your team</a><a class="tlink" href="projects.html#/work/subtitle-saas" data-cta="product">Case study →</a></div></li><li class="prod-card" style="--c:#9B8CFF"><span class="meta">Custom build</span><h3>Your own AI agent</h3><p>Leads, reports, documents or follow-ups: an agent built around your workflow, with support after launch.</p><div class="prod-acts"><a class="btn btn-primary sm" href="contact.html?topic=AI%20agent%20for%20my%20business#start" data-cta="product">Tell me your workflow</a></div></li></ul>
 </div></section>
+<div class="stack-strip" aria-label="Tools used in shipped or published work"><div class="wrap"><ul><li>Python</li><li>PyTorch</li><li>TensorFlow</li><li>YOLOv8</li><li>OpenCV</li><li>FastAPI</li><li>LangChain</li><li>LangGraph</li><li>n8n</li><li>Whisper</li><li>Docker</li></ul></div></div>
 <section id="how" class="proc" aria-labelledby="how-h"><div class="wrap">
   <div class="sec-head reveal"><p class="meta">How we work</p><h2 id="how-h">From first call to a system you own.</h2></div>
   <ol class="proc-line reveal"><li><span class="proc-n">01</span><h3>Discover</h3><p>Your problem, your data and what success looks like.</p></li><li><span class="proc-n">02</span><h3>Prototype</h3><p>A first working version on your own samples.</p></li><li><span class="proc-n">03</span><h3>Validate</h3><p>Tested on data the model has not seen, with real metrics.</p></li><li><span class="proc-n">04</span><h3>Deploy</h3><p>An API, app or workflow your team can run, with docs.</p></li><li><span class="proc-n">05</span><h3>Improve</h3><p>Tune on new cases and add what the team needs next.</p></li></ol>

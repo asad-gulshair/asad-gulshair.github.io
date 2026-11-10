@@ -37,7 +37,8 @@ const best = (list) => list.map((p, i) => ({ p, k: [p.media.type === 'illus' ? 1
   .sort((x, y) => { for (let j = 0; j < 4; j++) if (x.k[j] !== y.k[j]) return x.k[j] - y.k[j]; return 0; }).map((x) => x.p);
 function render() {
   const host = $('#ind'); if (!host) return;
-  const cats = CATS.filter((c) => PROJECTS.some((p) => p.cat === c.id)); if (!cats.length) throw new Error('no categories');
+  // business owners first: AI agents and automation lead the tabs
+  const cats = CATS.filter((c) => PROJECTS.some((p) => p.cat === c.id)).sort((a, b) => (b.id === 'agents') - (a.id === 'agents')); if (!cats.length) throw new Error('no categories');
   const tabs = $('.ind-tabs', host), panel = $('#ind-panel', host);
   tabs.innerHTML = cats.map((c, i) => `<button class="ind-tab" type="button" role="tab" id="it-${c.id}" aria-selected="${i === 0}" aria-controls="ind-panel" tabindex="${i === 0 ? 0 : -1}" data-cat="${c.id}"><span class="dot" style="background:${esc(c.dot)}"></span>${esc(c.label)}</button>`).join('');
   const show = (id, focus) => {

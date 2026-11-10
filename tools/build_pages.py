@@ -119,6 +119,16 @@ PROCESS = [
  ('Deploy', 'An API, app or workflow your team can run, with docs.'),
  ('Improve', 'Tune on new cases and add what the team needs next.'),
 ]
+RESULTS = '''<section id="results" class="res" aria-labelledby="res-h"><div class="wrap">
+  <div class="sec-head reveal"><p class="meta">Results</p><h2 id="res-h">Systems I&rsquo;ve built in real businesses.</h2><p class="lead">The problem, what I built, and what changed.</p></div>
+  <ol class="res-grid reveal">
+    <li class="res-card" style="--c:var(--c-recruitment)"><span class="res-logo"><img src="assets/img/logos/qarshi.png" alt="Qarshi Industries" width="158" height="79" loading="lazy"></span><span class="meta">Recruitment &middot; In production</span><h3>Hiring that needed three people, now automated</h3><dl><dt>Problem</dt><dd>Three HR staff screened every CV and organised candidates by hand.</dd><dt>Built</dt><dd>An AI system for CV intake, scoring with reasons, shortlisting, document checks and interview scheduling.</dd><dt>Result</dt><dd>The system now does that work, and HR approves every decision.</dd></dl></li>
+    <li class="res-card" style="--c:var(--c-agents)"><span class="res-logo"><img src="assets/img/logos/drm.svg" alt="Dot Republic Media" width="87" height="33" loading="lazy"></span><span class="meta">Media &middot; In production</span><h3>Subtitles and translation in one tool</h3><dl><dt>Problem</dt><dd>Transcribing and translating videos into several languages was slow manual work.</dd><dt>Built</dt><dd>An AI platform for transcription, subtitles and translation.</dd><dt>Result</dt><dd>About 40% less manual translation work.</dd></dl></li>
+    <li class="res-card" style="--c:var(--c-industrial)"><span class="res-logo res-word">RICI Pakistan</span><span class="meta">Inspection &middot; Industrial QA</span><h3>Weld defects found and reported automatically</h3><dl><dt>Problem</dt><dd>Inspectors checked every weld and wrote detailed reports with photos.</dd><dt>Built</dt><dd>A camera system that detects weld defects and creates the report against the standard.</dd><dt>Result</dt><dd>About 40% less manual inspection time.</dd></dl></li>
+  </ol>
+  <p class="res-cta reveal"><a class="btn btn-primary" href="contact.html#start" data-cta="results">Book a 20-minute call</a><span>Tell me the task. I&rsquo;ll tell you if it can be automated.</span></p>
+</div></section>
+'''
 def page_index():
     PRODUCTS_HTML = f'''<section id="products" class="prod" aria-labelledby="prod-h"><div class="wrap">
   <div class="sec-head reveal"><p class="meta">Products</p><h2 id="prod-h">Tools that work today, and agents built for you.</h2><p class="lead">Try a tool that already works, or tell me the workflow you want an agent to run.</p></div>
@@ -129,22 +139,21 @@ def page_index():
 <section class="hero" aria-labelledby="hero-h"><div class="wrap">
   <div class="hero-copy">
     <p class="meta" data-site="hero.eyebrow">Asad Gulshair · AI Engineer</p>
-    <h1 id="hero-h" data-site="hero.headline">AI that takes the repetitive work off your team.</h1>
-    <p class="lead" data-site="hero.subline">From computer vision on the factory floor to workflow automation across HR and operations, I build AI systems around your process and your data. Tell me the problem and I'll design the solution.</p>
-    <div class="cta-row"><a class="btn btn-primary" href="contact.html#start" data-cta="hero">Get a free consultation</a><a class="btn" href="#work" id="cta-work">See real results</a></div>
+    <h1 id="hero-h" data-site="hero.headline">Get hours back every week.</h1>
+    <p class="lead" data-site="hero.subline">I build AI that does your team&rsquo;s repetitive work: data entry, documents, reports and follow-ups. Connected to the tools you already use, with a person in control.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="contact.html#start" data-cta="hero">Book a 20-minute call</a><a class="btn" href="#results">See what I&rsquo;ve automated</a></div>
     <a class="proof" href="#work" data-proof aria-label="Real output from my models: see the work"><span class="proof-th"><img src="assets/media/crack-detect.webp?v=2" alt="" width="64" height="40" loading="eager"><img src="assets/media/porosity-detect.webp?v=2" alt="" width="64" height="40" loading="eager"><img src="assets/media/parcel-count.webp" alt="" width="64" height="40" loading="eager"></span><span class="proof-t"><b>Real output from my models</b><span>Crack, porosity and parcel detection</span></span></a>
     <p class="meta avail" data-avail><i></i><span>Available for new projects</span></p>
     <nav class="practice" aria-label="Practice areas">
+      <a href="projects.html#agents" data-cat="agents"><span class="dot" style="background:var(--c-agents)"></span>AI Agents &amp; SaaS</a>
       <a href="projects.html#industrial" data-cat="industrial"><span class="dot" style="background:var(--c-industrial)"></span>Industrial Vision</a>
       <a href="projects.html#recruitment" data-cat="recruitment"><span class="dot" style="background:var(--c-recruitment)"></span>Recruitment Automation</a>
-      <a href="projects.html#agents" data-cat="agents"><span class="dot" style="background:var(--c-agents)"></span>AI Agents &amp; SaaS</a>
       <a href="projects.html#agriculture" data-cat="agriculture"><span class="dot" style="background:var(--c-agriculture)"></span>Agriculture</a>
     </nav>
   </div>
   <div class="hero-media" id="hero-media"><div class="hero-backdrop" aria-hidden="true"></div><img class="fallback-still" src="assets/media/hero-still.webp" alt="" width="900" height="900" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"><canvas id="aperture" aria-hidden="true"></canvas><div class="guide-home" id="guide-home"></div></div>
-</div><a class="scroll-cue" href="#work" aria-label="Scroll to my work"><i></i><span>Scroll</span></a></section>
-{FACTS}<div class="stack-strip" aria-label="Tools used in shipped or published work"><div class="wrap"><ul>{''.join(f'<li>{s}</li>' for s in STACK)}</ul></div></div>
-<section id="work" aria-labelledby="work-h"><div class="wrap">
+</div><a class="scroll-cue" href="#results" aria-label="Scroll to results"><i></i><span>Scroll</span></a></section>
+{RESULTS}{FACTS}<section id="work" aria-labelledby="work-h"><div class="wrap">
   <div class="sec-head reveal"><p class="meta">Selected work</p><h2 id="work-h">Pick an industry. See what I built.</h2></div>
   <div class="ind reveal" id="ind">
     <div class="ind-tabs" role="tablist" aria-label="Industries"><a class="ind-tab" href="projects.html#industrial"><span class="dot" style="background:var(--c-industrial)"></span>Industrial Vision</a><a class="ind-tab" href="projects.html#recruitment"><span class="dot" style="background:var(--c-recruitment)"></span>Recruitment Automation</a><a class="ind-tab" href="projects.html#agents"><span class="dot" style="background:var(--c-agents)"></span>AI Agents &amp; SaaS</a><a class="ind-tab" href="projects.html#agriculture"><span class="dot" style="background:var(--c-agriculture)"></span>Agriculture</a></div>
@@ -157,7 +166,8 @@ def page_index():
   <div class="sec-head reveal"><p class="meta">Services</p><h2 id="svc-h">What I can do for you.</h2><p class="lead">Different businesses need different things: a custom system, an AI agent for a daily workflow, or a tool that is ready today.</p></div>
   <ul class="svc-grid reveal">{''.join(f'<li class="svc-card" style="--c:{c}"><span class="svc-ic" aria-hidden="true">{ic}</span><h3>{t}</h3><p>{d}</p><a class="svc-go" href="{h}">{l} →</a></li>' for ic, t, d, h, l, c in SERVICES)}</ul>
 </div></section>
-{PRODUCTS_HTML}<section id="how" class="proc" aria-labelledby="how-h"><div class="wrap">
+{PRODUCTS_HTML}<div class="stack-strip" aria-label="Tools used in shipped or published work"><div class="wrap"><ul>{''.join(f'<li>{s}</li>' for s in STACK)}</ul></div></div>
+<section id="how" class="proc" aria-labelledby="how-h"><div class="wrap">
   <div class="sec-head reveal"><p class="meta">How we work</p><h2 id="how-h">From first call to a system you own.</h2></div>
   <ol class="proc-line reveal">{''.join(f'<li><span class="proc-n">{n:02d}</span><h3>{t}</h3><p>{d}</p></li>' for n, (t, d) in enumerate(PROCESS, 1))}</ol>
 </div></section>

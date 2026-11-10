@@ -419,3 +419,26 @@ dialog.meet[open] .mw{animation:mw-in .5s var(--ease) calc(var(--i) * 80ms + 120
   .mcta.on{transform:none;opacity:1;visibility:visible;transition:transform .35s var(--ease),opacity .25s}
   .mcta .btn{flex:1;justify-content:center;height:44px}
 }
+/* ---- business-owner layer: results, home badges, phone hero order ---- */
+.res-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.res-card{position:relative;display:grid;align-content:start;gap:14px;padding:28px;border:1px solid var(--border);border-radius:14px;background:var(--surface-1);overflow:hidden}
+.res-card::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:var(--c)}
+.res-card .meta{color:var(--c)}
+.res-logo{display:flex;align-items:center;height:44px}
+.res-logo img{height:32px;width:auto}
+.res-card:first-child .res-logo img{height:44px}
+.res-word{font:600 20px/1 var(--sans);letter-spacing:.02em;color:var(--text)}
+.res-card h3{margin:0;font-size:21px;line-height:1.3;font-weight:500;text-wrap:balance}
+.res-card dl{margin:0;display:grid;gap:4px}
+.res-card dt{font:500 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-top:8px}
+.res-card dd{margin:0;color:var(--text-2);font-size:15px;line-height:1.55}
+.res-card dt:last-of-type,.res-card dd:last-of-type{color:var(--text)}
+.res-cta{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.res-cta span{color:var(--text-2)}
+.ind .badge{display:none}
+@media (max-width:1000px){.res-grid{grid-template-columns:1fr}}
+@media (max-width:900px){
+  .hero-copy{grid-row:1}
+  .hero-media{grid-row:2;height:34svh}
+  .hero .wrap{padding-top:28px}
+  }
